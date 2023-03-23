@@ -6,7 +6,7 @@ adicionar = 0
 while adicionar not in (1, 2, 3, 4, 5):
     adicionar = input("(1) para adicionar uma editora\n(2) para adicionar um(a) autor(a)\n(3) para adicinar um livro\n(4) para adicionar um cliente \n(5) para adicionar um emprestimo")
     while adicionar.isnumeric() == False:
-        adicionar = input("(1) para adicionar uma editora\n(2) para adicionar um(a) autor(a)\n(3) para adicinar um livro\n(4) para adicionar um cliente \n(5) para adicionar um emprestimo")
+        adicionar = input("digite um valor numérico para continuar")
     adicionar= int(adicionar)
     if adicionar not in (1, 2, 3, 4, 5):
         print("opção invalida! escolha uma valida")

@@ -4,7 +4,9 @@ from mysql.connector import Error
 
 deletar = 0
 while deletar not in (1, 2, 3, 4, 5):
-    deletar = int(input("(1) para adicionar uma editora\n(2) para adicionar um(a) autor(a)\n(3) para adicinar um livro\n(4) para adicionar um cliente \n(5) para adicionar um emprestimo"))
+    deletar = input("(1) para adicionar uma editora\n(2) para adicionar um(a) autor(a)\n(3) para adicinar um livro\n(4) para adicionar um cliente \n(5) para adicionar um emprestimo")
+    while deletar.isnumeric() == False:
+        deletar = input("digite um valor numerico para continuar")
     if deletar not in (1, 2, 3, 4, 5):
         print("opção invalida! escolha uma valida")
 # fim do modulo de opção de inserção

@@ -3,7 +3,11 @@ from mysql.connector import Error
 
 selecao = 0
 while selecao not in (1, 2, 3, 4, 5):
-    selecao = int(input("(1) para analisar a tabela de editoras\n(2) para analisar a tabela de autores\n(3) para analisar a tabela de livros\n(4) para analisar a tabela de clientes\n(5) para analisar a tabela de emprestimos"))
+    selecao = input("(1) para analisar a tabela de editoras\n(2) para analisar a tabela de autores\n(3) para analisar a tabela de livros\n(4) para analisar a tabela de clientes\n(5) para analisar a tabela de emprestimos")
+    while selecao.isnumeric() == False:
+        selecao = input("digite um valor numérico para continuar")
+    selecao = int(selecao)
+
     if selecao not in (1, 2, 3, 4, 5):
         print("opção invalida! escolha uma valida")
 # fim do modulo de opção de inserção
