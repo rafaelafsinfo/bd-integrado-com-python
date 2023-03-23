@@ -132,4 +132,4 @@ finally:
     if connection.is_connected():
         cursor.close()
         connection.close()
-        print("MySQL conexão fechada")
+        print("MySQL conexão fechada \n 'feito por Rafael Alves Freitas da Silva 2FID'")
