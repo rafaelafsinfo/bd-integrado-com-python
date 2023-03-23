@@ -32,7 +32,10 @@ try:
                 record = cursor.fetchone()
                 print(record)
                 # Delete a record
-                id = int(input("id"))
+                id = input("digite o id da editora")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_Delete_query = f"""Delete from editora where id = {id}"""
                 cursor.execute(sql_Delete_query)
                 connection.commit()
@@ -48,7 +51,10 @@ try:
                 record = cursor.fetchone()
                 print(record)
                 # Delete a record
-                id = int(input("id"))
+                id = input("digite o id do autor")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido: ")
+                id = int(id)
                 sql_Delete_query = f"""Delete from autor where id = {id}"""
                 cursor.execute(sql_Delete_query)
                 connection.commit()
@@ -63,7 +69,10 @@ try:
                 record = cursor.fetchone()
                 print(record)
                 # Delete a record
-                id = int(input("insira o id do livro"))
+                id = input("insira o id do livro:")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido:")
+                id = int(id)
                 sql_Delete_query = f"""Delete from livro where id = {id}"""
                 cursor.execute(sql_Delete_query)
                 connection.commit()
@@ -78,7 +87,10 @@ try:
                 record = cursor.fetchone()
                 print(record)
                 # Delete a record
-                id = int(input("insira o id do usuario"))
+                id = input("insira o id do usuario")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_Delete_query = f"""Delete from usuario where id = {id}"""
                 cursor.execute(sql_Delete_query)
                 connection.commit()
@@ -93,7 +105,10 @@ try:
                 record = cursor.fetchone()
                 print(record)
                 # Delete a record
-                id = int(input("insira o id do emprestimo"))
+                id = input("insira o id do emprestimo")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_Delete_query = f"""Delete from emprestimos where id = {id}"""
                 cursor.execute(sql_Delete_query)
                 connection.commit()
@@ -101,11 +116,11 @@ try:
                 controle = input("Deseja continuar deletando emprestimos").upper()
         cnt = input("deseja continuar inserindo dados nas as tabelas").upper()
         if cnt == "SIM" or cnt == "S":
-            adicionar = 0
-            while adicionar not in (1, 2, 3, 4, 5):
-                adicionar = int(input("(1) para adicionar uma editora\n(2) para adicionar um(a) autor(a)\n(3) para adicinar um livro\n(4) para adicionar um cliente \n(5) para adicionar um emprestimo"))
+            deletar = 0
+            while deletar not in (1, 2, 3, 4, 5):
+                deletar = int(input("(1) para adicionar uma editora\n(2) para adicionar um(a) autor(a)\n(3) para adicinar um livro\n(4) para adicionar um cliente \n(5) para adicionar um emprestimo"))
 
-                if adicionar not in (1, 2, 3, 4, 5):
+                if deletar not in (1, 2, 3, 4, 5):
                     print("opção invalida! escolha uma valida")
 # fim do mudulo de deletar de dados
 

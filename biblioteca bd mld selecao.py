@@ -25,7 +25,10 @@ try:
         if selecao == 1:
             controle = "sim"
             while controle == "s" or controle == "sim":
-                id = int(input("insira o id da editora"))
+                id = input("insira o id da editora")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_select_Query = f"select * from editora where id = '{id}';"
                 cursor = connection.cursor()
                 cursor.execute(sql_select_Query)
@@ -41,7 +44,10 @@ try:
         if selecao == 2:
             controle = "SIM"
             while controle == "S" or controle == "SIM":
-                id = int(input("insira o id do autor"))
+                id = input("insira o id do autor")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_select_Query = f"select * from autor where id = '{id}';"
                 cursor = connection.cursor()
                 cursor.execute(sql_select_Query)
@@ -57,7 +63,10 @@ try:
         if selecao == 3:
             controle = "SIM"
             while controle == "S" or controle == "SIM":
-                id = int(input("insira o id do livro"))
+                id = input("insira o id do livro")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_select_Query = f"select * from livros where id = '{id}';"
                 cursor = connection.cursor()
                 cursor.execute(sql_select_Query)
@@ -77,7 +86,10 @@ try:
         if selecao == 4:
             controle = "SIM"
             while controle == "S" or controle == "SIM":
-                id = int(input("insira o id do usuario"))
+                id = input("insira o id do usuario")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_select_Query = f"select * from usuario where id = '{id}';"
                 cursor = connection.cursor()
                 cursor.execute(sql_select_Query)
@@ -97,7 +109,10 @@ try:
         if selecao == 5:
             controle = "SIM"
             while controle == "S" or controle == "SIM":
-                id = int(input("insira o id do emprestimo"))
+                id = input("insira o id do emprestimo")
+                while id.isnumeric() == False:
+                    id = input("digite um id valido")
+                id = int(id)
                 sql_select_Query = f"select * from emprestimos where id = '{id}';"
                 cursor = connection.cursor()
                 cursor.execute(sql_select_Query)
@@ -117,7 +132,10 @@ try:
         if cnt == "SIM" or cnt == "S":
             selecao = 0
             while selecao not in (1, 2, 3, 4, 5):
-                selecao = int(input("(1) para analisar a tabela de editoras\n(2) para analisar a tabela de autores\n(3) para analisar a tabela de livros\n(4) para analisar a tabela de clientes\n(5) para analisar a tabela de emprestimos"))
+                selecao = input("(1) para analisar a tabela de editoras\n(2) para analisar a tabela de autores\n(3) para analisar a tabela de livros\n(4) para analisar a tabela de clientes\n(5) para analisar a tabela de emprestimos")
+                while selecao.isnumeric() == False:
+                    selecao = input("digite uma opção valido")
+                selecao = int(selecao)
                 if selecao not in (1, 2, 3, 4, 5):
                     print("opção invalida! escolha uma valida")
 # fim do mudulo de injeção de dados
